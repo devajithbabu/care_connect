@@ -1,0 +1,165 @@
+#api call for doctor
+###
+GET http://127.0.0.1:8000/doctor/
+Accept: application/json
+
+#api call for creating
+###
+POST http://127.0.0.1:8000/doctor/
+Content-Type: application/json
+
+{
+    "name":"arjun",
+    "specialization":"urology",
+    "fee":1000,
+    "qualification":"mbs",
+    "email":"dev@gmai"
+}
+
+#api call for fetching doctor
+###
+GET http://127.0.0.1:8000/doctor/1/
+
+Accept: application/jsonl
+
+#api call for update
+###
+PUT http://127.0.0.1:8000/doctor/1/
+Content-Type: application/json
+
+{
+    "name":"arju",
+    "specialization":"gynecology",
+    "fee":1000,
+    "qualification":"mbs",
+    "email":"dev@gma"
+}
+#api call for delete
+###
+DELETE http://127.0.0.1:8000/doctor/3/
+Content-Type: application/json
+
+
+
+
+#v2_staff
+#api call for doctor
+###
+GET http://127.0.0.1:8000/v2/doctor/
+Accept: application/json
+Authorization: Basic adminuser:password
+
+#api call for creating
+###
+POST http://127.0.0.1:8000/v2/doctor/
+Content-Type: application/json
+Authorization: Basic superuser:superuser
+
+{
+    "name": "Dr. Akhil",
+    "specialization": "urology",
+    "fee": 1000,
+    "qualification": "MBBS",
+    "email": "akhil@gmail.com"
+}
+
+#api call for fetching doctor
+###
+GET http://127.0.0.1:8000/v2/doctor/4/
+
+Accept: application/jsonl
+
+#api call for delete
+###
+DELETE http://127.0.0.1:8000/v2/doctor/5/
+
+Content-Type: application/json
+
+#api call for update
+###
+PUT http://127.0.0.1:8000/v2/doctor/6/
+Content-Type: application/json
+
+{
+    "name":"arjun",
+    "specialization":"gynecology",
+    "fee":-1000,
+    "qualification":"mbbs",
+    "email":"dev@gmail.com"
+}
+
+#api call for creating admin user
+###
+POST http://127.0.0.1:8000/v2/admin-register/
+Content-Type: application/json
+
+{
+    "username":"super",
+    "email":"superuser@gmail.com",
+    "password":"superuser"
+}
+
+#-----------------------------------------------booking-----------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------------------------
+
+
+
+#api call for list bookings
+###
+GET http://127.0.0.1:8000/booking/
+Accept: application/json
+Authorization: Basic dev:password
+
+#api call for booking
+###
+POST http://127.0.0.1:8000/booking/
+Content-Type: application/json
+Authorization: Basic dev:password
+
+{
+    "patient_name":"tm",
+    "phone":1234,
+    "doctor":10,
+    "appointment_date":"2026-12-12",
+    "problem":"sneezing"
+}
+
+#api call for register
+###
+POST http://127.0.0.1:8000/v2/booking/signup/
+Content-Type: application/json
+
+{
+    "username":"dev",
+    "email":"dev@gmail.com",
+    "password":"password"
+}
+
+
+#appointment list
+###
+GET http://127.0.0.1:8000/v2/booking/appointment/
+Accept: application/json
+Authorization: Basic dev:password
+
+#appointment booking
+###
+POST http://127.0.0.1:8000/v2/booking/appointment/
+Content-Type: application/json
+Authorization: Basic dev:password
+
+{
+    "patient_name":"ajun",
+    "phone":125389124,
+    "doctor":10,
+    "appointment_date":"2026-12-27",
+    "problem":"sneezing"
+
+}
+
+#appointment retrieve
+###
+delete http://127.0.0.1:8000/v2/booking/appointment/13/
+Accept: application/json
+Authorization: Basic dev:password
